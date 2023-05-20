@@ -12,8 +12,15 @@ def test_model():
     X_test = T.tensor(X_test, dtype=T.float).unsqueeze(1).unsqueeze(1)
     
     # load model
-    print("\nModel path:")
-    load_path = input(" > ")
+    print("Chose model:")
+    print(" 1) Default")
+    print(" 2) Personal model")
+    option = input(" > ")
+    if option == "2":
+        print("\nModel path:")
+        load_path = input(" > ")
+    else:
+        load_path = "model_50"
     nn = Model(0.001)
     nn.load_model(f"models/{load_path}/model.pkl")
 
